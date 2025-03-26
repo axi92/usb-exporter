@@ -3,6 +3,7 @@ services:
     build:
       context: .
       dockerfile: ./image/text-exporter/Dockerfile
+    hostname: ${HOSTNAME:-CHANGEME}
     volumes:
       - promfile:/app/data
     env_file:
