@@ -8,7 +8,7 @@ services:
     env_file:
       - .env
     ports:
-      - ${BIND}:9014
+      - ${BIND-9014}:9014
     entrypoint:
     - /usr/bin/textfile_exporter
     - -p
