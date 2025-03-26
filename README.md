@@ -7,7 +7,7 @@ Use lsusb jc and jq to generate a textfile that is prometheus readable. Then use
 ## Usage
 ### build
 ```
-docker-compose build --no-cache
+docker compose build --no-cache
 ```
 ### run
 ```
