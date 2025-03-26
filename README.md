@@ -1,17 +1,19 @@
 # usb-prometheus-file
-Use lsusb jc and jq to generate a textfile that is prometheus readable. Then use [IBM/textfile-exporter](https://github.com/IBM/textfile-exporter) to serve that textfile for prometheus.
+Use lsusb, jc and jq to generate a textfile that is prometheus readable. Then use [IBM/textfile-exporter](https://github.com/IBM/textfile-exporter) to serve that textfile for prometheus.
 
 ## Requirements
 - docker
 
 ## Usage
+Create an .env file with your prometheus bind address and save it as .env in the same directory as this file.
+
 ### build
 ```
 docker compose build --no-cache
 ```
 ### run
 ```
-docker compose up --force-recreate --build --always-recreate-deps --remove-orphans
+docker compose up -d --force-recreate --build --always-recreate-deps --remove-orphans
 ```
 
 ## Notes
