@@ -1,0 +1,25 @@
+services:
+  text-exporter:
+    build:
+      context: .
+      dockerfile: ./image/text-exporter/Dockerfile
+    volumes:
+      - promfile:/app/data
+    ports:
+      - 9014:9014
+    entrypoint:
+    - /usr/bin/textfile_exporter
+    - -p
+    - ./data
+  lsusb:
+    build:
+      context: .
+      dockerfile: ./image/lsusb/Dockerfile
+    volumes:
+      - /dev:/dev:ro
+      - promfile:/app/data
+      - ./run.sh:/app/run.sh:ro
+    entrypoint: "./run.sh"
+
+volumes:
+  promfile:
