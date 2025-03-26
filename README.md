@@ -1,4 +1,4 @@
-# usb-prometheus-file
+# usb-exporter
 Use lsusb, jc and jq to generate a textfile that is prometheus readable. Then use [IBM/textfile-exporter](https://github.com/IBM/textfile-exporter) to serve that textfile for prometheus.
 
 ## Requirements
