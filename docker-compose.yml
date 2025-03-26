@@ -3,11 +3,9 @@ services:
     build:
       context: .
       dockerfile: ./image/text-exporter/Dockerfile
-    hostname: ${HOSTNAME:-CHANGEME}
     volumes:
       - promfile:/app/data
-    env_file:
-      - .env
+
     ports:
       - ${BIND-9014}:9014
     entrypoint:
@@ -19,6 +17,9 @@ services:
     build:
       context: .
       dockerfile: ./image/lsusb/Dockerfile
+    hostname: ${HOSTNAME:-CHANGEME}
+    env_file:
+      - .env
     volumes:
       - /dev:/dev:ro
       - promfile:/app/data
