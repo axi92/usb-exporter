@@ -12,6 +12,8 @@ services:
     - /usr/bin/textfile_exporter
     - -p
     - ./data
+    - -i
+    - 3s
     restart: on-failure:10
   lsusb:
     build:
